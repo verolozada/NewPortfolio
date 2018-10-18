@@ -1,89 +1,240 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <!-- Google Fonts -->
-    <!-- Materialize -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <title>Veronica Lozada</title>
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- JQuery -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
-
-<body>
-    <nav>
-        <div class="nav-wrapper container">
-            <a href="#about" class="brand-logo">Veronica Lozada</a>
-            <!-- SideNav -->
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger">
-                <i class="material-icons">menu</i>
-            </a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li>
-                    <a href="#about">About</a>
-                </li>
-                <li>
-                    <a href="#portfolio">Portfolio</a>
-                </li>
-                <li>
-                    <a href="#contact">Contact Me</a>
-                </li>
-            </ul>
-
-            <!-- Sidebar/nav menu -->
-            <ul class="sidenav" id="mobile-demo">
-                <li>
-                    <a href="#about">About</a>
-                </li>
-                <li>
-                    <a href="#portfolio">Portfolio</a>
-                </li>
-                <li>
-                    <a href="#contact">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <div class="parallax-container">
-        <div class="parallax">
-            <img src="images/losroques.jpg">
-        </div>
-    </div>
-    <div class="section white scrollspy" id="about">
-        <div class="row container">
-            <h2 class="header">Parallax</h2>
-            <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than
-                the foreground content while scrolling.</p>
-        </div>
-    </div>
-    <div class="parallax-container">
-        <div class="parallax">
-            <img src="images/1Avila.jpg">
-        </div>
-    </div>
-</body>
+<title>Veronica Lozada</title>
+<link rel="shortcut icon" type="assets/image/png" href="icon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+    crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Basic|Monda" rel="stylesheet">
 <style>
-    .brand-logo {
-        font-weight: bold;
+    body,
+    h1,
+    h2,
+    h4,
+    h5,
+    h6 {
+        font-family: "Lato", sans-serif;
+    }
+
+    body,
+    html {
+        height: 100%;
+        color: #777;
+        line-height: 1.8;
+    }
+
+    h3 {
+        font-family: 'Basic';
+    }
+
+    /* Parallax */
+
+    .bgimg-1,
+    .bgimg-2,
+    .bgimg-3 {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    /* First Image */
+
+    .bgimg-1 {
+        background-image: url('aconcagua.jpg');
+        min-height: 100%;
+    }
+
+    /* Second image (Portfolio) */
+
+    .bgimg-2 {
+        background-image: url('Picture1.png');
+        min-height: 40%;
+    }
+
+    /* Third image (Contact) */
+
+    .bgimg-3 {
+        background-image: url('picture3.jpg');
+        min-height: 40%;
+    }
+
+    .w3-wide {
+        letter-spacing: 10px;
+    }
+
+    .w3-hover-opacity {
+        cursor: pointer;
+    }
+
+    p {
+        text-align: justify;
+    }
+
+    #name {
+        font-family: 'Monda';
     }
 </style>
 
-<script>
+<body>
 
-    $(document).ready(function () {
-        // Sidebar Menu
-        const sideNav = document.querySelector('.sidenav');
-        M.Sidenav.init(sideNav, {});
+    <!-- Navbar  -->
+    <div class="w3-top">
+        <div class="w3-bar" id="myNavbar">
+            <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()"
+                title="Toggle Navigation Menu">
+                <i class="fa fa-bars">menu</i>
+            </a>
+            <a href="#home" class="w3-bar-item w3-button">HOME</a>
+            <a href="#about" class="w3-bar-item w3-button w3-hide-small">ABOUT</a>
+            <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small">PORTFOLIO</a>
+            <a href="#contact" class="w3-bar-item w3-button w3-hide-small">CONTACT</a>
+        </div>
 
-        // Parallax
-        $('.parallax').parallax();
+        <!-- Navbar on Small Screens -->
+        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+            <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+            <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
+            <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+        </div>
+    </div>
 
-    });
-</script>
+    <!-- First Image-->
+    <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+        <div class="w3-display-middle" style="white-space:nowrap;">
+            <span class="w3-center w3-padding-large w3-pale-red w3-xlarge w3-wide w3-animate-opacity" id="name">VERONICA LOZADA</span>
+        </div>
+    </div>
+
+    <!-- About Me -->
+    <div class="w3-content w3-container w3-padding-64" id="about">
+        <h3 class="w3-center">ABOUT ME</h3>
+
+        <div class="w3-row">
+            <div class="w3-col m6 w3-center w3-padding-large">
+                <img src="img.jpg" class="w3-round w3-image w3-opacity" alt="Photo of Me" width="500" height="333">
+            </div>
+            <div class="w3-col m6 w3-padding-large">
+                <p>My name is Veronica Lozada, I'm 22 years old. I'm from Caracas, Venezuela and I recently moved to Atlanta
+                    looking for personal and professional growth and to have new experiences in life. I just graduated from
+                    Industrial Engineering at the Universidad Simon Bolivar located in Caracas. I had the opportunity to
+                    live in Barcelona for a year as an exchange student and has been one of the best experiences in my life,
+                    getting to know people from all over the world and to experience a different culture than mine. I love
+                    to travel and meet new places everytime I can. Currently I'm a Georgia Tech Full Stack Developer Student</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Image -->
+    <div class="bgimg-2 w3-display-container w3-opacity-min">
+        <div class="w3-display-middle">
+            <span class="w3-xxlarge w3-text-white w3-wide">PORTFOLIO</span>
+        </div>
+    </div>
+
+    <!-- Container (Portfolio Section) -->
+    <div class="w3-content w3-container w3-padding-64" id="portfolio">
+        <h3 class="w3-center">MY WORK</h3>
+        <p class="w3-center">
+            Check out some of my work, just click!
+        </p>
+        <br>
+
+        <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+        <div class="w3-row-padding w3-center">
+            <div class="w3-col m3">
+                <a href="https://verolozada.github.io/BonVoyage/" target="_blank">
+                    <img src="bonVoyage.png" style="width:100%" class="w3-hover-opacity" alt="BonVoyage">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a href="https://verolozada.github.io/GifTastic/" target="_blank">
+                    <img src="gifTastic.png" style="width:100%" class="w3-hover-opacity" alt="Coffee beans">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a href="https://verolozada.github.io/TriviaGame/" target="_blank">
+                    <img src="marvelTrivia.png" style="width:100%" class="w3-hover-opacity" alt="Bear closeup">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a href="https://verolozada.github.io/TrainSchedule/" target="_blank">
+                    <img src="train.png" style="width:100%" class="w3-hover-opacity" alt="Quiet ocean">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Third Image -->
+    <div class="bgimg-3 w3-display-container w3-opacity-min">
+        <div class="w3-display-middle">
+            <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
+        </div>
+    </div>
+
+    <!-- Container (Contact Section) -->
+    <div class="w3-content w3-container w3-padding-64" id="contact">
+        <div class="w3-row">
+            <div class="w3-col m6 w3-center w3-padding-large">
+                <img src="https://www.lynneknowlton.com/wp-content/uploads/2016/08/contact-me.png" class="w3-round w3-image w3-opacity" alt="Photo of Me"
+                    width="500" height="333">
+                <p class="w3-center">
+                    Let me know what you think!
+                </p>
+            </div>
+            <div class="w3-col m8 w3-panel">
+                <div class="w3-large w3-margin-bottom">
+                    <br>
+                    <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: verolozada12@gmail.com
+                    <br>
+                    <i class="fab fa-linkedin fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> LinkedIn
+                    <br>
+                    <a href="https://github.com/verolozada" target="_blank" style="text-decoration: none;">
+                        <i class="fab fa-github fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> GitHub
+                    </a>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-center w3-pale-red w3-padding-64 w3-opacity w3-hover-opacity-off">
+        <a href="#home" class="w3-button w3-light-grey">
+            <i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    </footer>
+
+    <script>
+
+        // Change style of navbar on scroll
+        window.onscroll = function () { myFunction() };
+        function myFunction() {
+            var navbar = document.getElementById("myNavbar");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+            } else {
+                navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+            }
+        }
+
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function toggleFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+
+</body>
 
 </html>

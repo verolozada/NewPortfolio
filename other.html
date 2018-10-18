@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+<style>
+    body,
+    html {
+        height: 100%;
+    }
+
+    .parallax {
+        /* The image used */
+        /* Full height */
+        height: 100%;
+
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #first {
+        /* background-image: url('picture3.jpg'); */
+        background-image: url('https://i1.trekearth.com/photos/67863/aconcagua.jpg');
+        /* opacity: 0.5;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%); */
+    }
+
+    #second {
+        background-image: url('Picture2.png');
+    }
+</style>
+
+<body>
+
+    <div class="parallax" id="first">
+        <span style="text-align:center; padding: 20px; background: pink; font-size: 18px; letter-spacing: 4px;">VERONICA LOZADA</span>
+    </div>
+
+    <div style="height: 300px; background-color: white;font-size:36px;">
+        Scroll Up and Down this page to see the parallax scrolling effect. This div is just here to enable scrolling. Tip: Try to
+        remove the background-attachment property to remove the scrolling effect.
+    </div>
+
+    <div class="parallax" id="second"></div>
+
+</body>
+
+</html>
