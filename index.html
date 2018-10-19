@@ -9,89 +9,8 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
     crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Basic|Monda|Dancing+Script" rel="stylesheet">
-<style>
-    body,
-    h1,
-    h2,
-    h4,
-    h5,
-    h6 {
-        font-family: "Lato", sans-serif;
-    }
+<link rel="stylesheet" href="style.css">
 
-    body,
-    html {
-        height: 100%;
-        color: #777;
-        line-height: 1.8;
-    }
-
-    /* Parallax */
-
-    .bgimg-1,
-    .bgimg-2,
-    .bgimg-3 {
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    /* First Image */
-
-    .bgimg-1 {
-        background-image: url('images/aconcagua.jpg');
-        min-height: 100%;
-    }
-
-    /* Second image (Portfolio) */
-
-    .bgimg-2 {
-        background-image: url('images/Picture1.png');
-        min-height: 40%;
-    }
-
-    /* Third image (Contact) */
-
-    .bgimg-3 {
-        background-image: url('images/picture3.jpg');
-        min-height: 40%;
-    }
-
-    .w3-wide {
-        letter-spacing: 10px;
-    }
-
-    .w3-hover-opacity {
-        cursor: pointer;
-    }
-
-    p {
-        text-align: justify;
-    }
-
-    #name {
-        font-family: 'Monda';
-    }
-
-    .mySlides {
-        display: none;
-    }
-
-    h3 {
-        font-family: 'Dancing Script', cursive;
-        font-size: 4em;
-    }
-
-    a {
-        text-decoration: none;
-    }
-    @media only screen and (max-width: 640px){
-        body{
-            max-width: 600px;
-        }
-    }
-</style>
 
 <body>
 
@@ -255,49 +174,7 @@
         <a href="#home" class="w3-button w3-light-grey">
             <i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
     </footer>
-
-    <script>
-
-        // Change style of navbar on scroll
-        window.onscroll = function () { myFunction() };
-        function myFunction() {
-            var navbar = document.getElementById("myNavbar");
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
-            } else {
-                navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
-            }
-        }
-
-        // Used to toggle the menu on small screens when clicking on the menu button
-        function toggleFunction() {
-            var x = document.getElementById("navDemo");
-            if (x.className.indexOf("w3-show") == -1) {
-                x.className += " w3-show";
-            } else {
-                x.className = x.className.replace(" w3-show", "");
-            }
-        }
-
-        // Slideshow
-        var slideIndex = 1;
-        showDivs(slideIndex);
-
-        function plusDivs(n) {
-            showDivs(slideIndex += n);
-        }
-
-        function showDivs(n) {
-            var i;
-            var x = document.getElementsByClassName("mySlides");
-            if (n > x.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = x.length }
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            x[slideIndex - 1].style.display = "block";
-        }
-    </script>
+    <script src="javascript/javascript.js"></script>
 
 </body>
 
