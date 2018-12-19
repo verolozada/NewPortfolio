@@ -15,5 +15,3 @@ require("./app/routes/htmlRoutes")(app)
 app.listen(PORT, () => {
     console.log(`Server http://localhost:${PORT}`);
 });
-
-
